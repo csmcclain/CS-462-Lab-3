@@ -1,15 +1,15 @@
 ruleset wovyn_base {
 
-    meta {
-        use module twilio.api alias twilio
-            with
-                accountSid = meta:rulesetConfig{"accountSid"}
-                authToken = meta:rulesetConfig{"authToken"}
-    }
+    // meta {
+    //     use module twilio.api alias twilio
+    //         with
+    //             accountSid = meta:rulesetConfig{"accountSid"}
+    //             authToken = meta:rulesetConfig{"authToken"}
+    // }
 
     // Define global variables.
     global {
-        temperature_threshold = 72
+        temperature_threshold = 75
         sender_of_sms = "" //TODO: SET ME BEFORE APPLYING
         receiver_of_sms = "" //TODO: SET ME BEFORE APPLYING
     }
@@ -71,7 +71,7 @@ ruleset wovyn_base {
         }
 
         // No action is needed we will always evaluate the postlude
-        twilio:sendSMS(receiver_of_sms, sender_of_sms, message)
+        //twilio:sendSMS(receiver_of_sms, sender_of_sms, message)
     }
 
 }
